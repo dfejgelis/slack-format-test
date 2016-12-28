@@ -36,6 +36,13 @@ class TransformationsController < ApplicationController
     end
   end
 
+  def destroy
+    @transformation = Transformation.find(params[:id])
+    @transformation.destroy
+
+    redirect_to transformations_path
+  end
+
   private
 
   def transformation_params
