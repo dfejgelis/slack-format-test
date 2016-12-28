@@ -4,7 +4,9 @@ class TransformationsController < ApplicationController
     @transformations = Transformation.all
   end
 
-  def new; end
+  def new
+    @transformation = Transformation.new
+  end
 
   def show
     @transformation = Transformation.find(params[:id])
@@ -12,9 +14,12 @@ class TransformationsController < ApplicationController
 
   def create
     @transformation = Transformation.new(transformation_params)
-    @transformation.save
 
-    redirect_to @transformation
+    if @transformation.save
+      redirect_to @transformation
+    else
+      render 'new'
+    end
   end
 
   private
