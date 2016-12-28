@@ -1,3 +1,5 @@
+<h1>Transformation Details</h1>
+
 <p>
   <strong>Title:</strong>
   <%= @transformation.title %>
@@ -8,4 +10,5 @@
   <%= @transformation.text %>
 </p>
 
+<%= link_to 'Edit', edit_transformation_path(@transformation) %> |
 <%= link_to 'Back', transformations_path %>
