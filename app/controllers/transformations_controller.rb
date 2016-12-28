@@ -1,0 +1,2 @@
+class TransformationsController < ApplicationController
+end
