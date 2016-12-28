@@ -5,13 +5,16 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: slack-format-test
   pool: 5
-  timeout: 5000
+  port: 5433
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  username: slack-format-test
+  password: wEscbWH3Yt6E
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
