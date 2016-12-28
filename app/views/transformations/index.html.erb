@@ -1,0 +1,20 @@
+<h1>Transformations list</h1>
+
+<%= link_to 'New Transformation', new_transformation_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+
+  <% @transformations.each do |transformation| %>
+    <tr>
+      <td><%= transformation.title %></td>
+      <td><%= transformation.text %></td>
+      <td>
+        <%= link_to 'Show', transformation_path(transformation) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
